@@ -121,7 +121,32 @@ void	testn(int i, char c)
 int		main(void)
 {
 	testn(0, 'a');
-	ft_putstr("This is a test of putstr");
+	ft_putstr("This is a test of putstr\n");
 
 	testn(1, 'b');
+	ft_putstr("0 => ");
+   	ft_putnbr(0);
+	ft_putstr("\n1 => ");
+  	ft_putnbr(1);
+	ft_putstr("\n-1 => ");
+	ft_putnbr(-1);
+	ft_putstr("\n10 => ");
+	ft_putnbr(10);
+	ft_putstr("\n-10 => ");
+	ft_putnbr(-10);
+	ft_putstr("\n3333 => ");
+	ft_putnbr(3333);
+	ft_putstr("\n-3333 => ");
+	ft_putnbr(-3333);
+	ft_putstr("\n42 => ");
+   	ft_putnbr(42);
+	ft_putstr("\n-42 => ");
+	ft_putnbr(-42);
+	ft_putstr("\n2147483647 => ");
+	ft_putnbr(2147483647);
+	ft_putstr("\n-2147483648 => ");
+	ft_putnbr(-2147483648);
+	ft_putstr("\n\n");
+	return (0);
 }
+
