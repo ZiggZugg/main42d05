@@ -1,5 +1,6 @@
 #include <unistd.h>
 #include <stdio.h>
+#include <stdlib.h>
 
 void	ft_putstr(char *str);
 void	ft_putnbr(int nb);
@@ -146,7 +147,23 @@ int		main(void)
 	ft_putnbr(2147483647);
 	ft_putstr("\n-2147483648 => ");
 	ft_putnbr(-2147483648);
-	ft_putstr("\n\n");
+	ft_putstr("\n");
+
+	testn(1, 'c');
+	printf("input: 333 expected 333 => %d\n",ft_atoi("333"));
+	printf("input: 123456789 expected 123456789 => %d\n",ft_atoi("123456789"));
+	printf("input: 42 expected: 42 => %d\n",ft_atoi("42"));
+	printf("input: -333 expected: -333 => %d\n",ft_atoi("-333"));
+	printf("input: -123456789 expected: -123456789 => %d\n",ft_atoi("-123456789"));
+	printf("input: -42 expected: -42 => %d\n",ft_atoi("-42"));
+	printf("input: \\f\\r\\t\\v\\' \'42 expected: 42 => %d\n",ft_atoi("\f\r\t\v 42"));
+	printf("input: ?!@#$*() 3245 expected: 0 => %d\n",ft_atoi("?!@#$*() 3245"));
+	printf("input: 42- 42 4242 expected: 42 => %d\n", ft_atoi("42- 42 4242"));
+	printf("input: -+42 expected: 0 => %d\n", ft_atoi("-+42"));
+	printf("input: +-42 expected: 0 => %d\n", ft_atoi("+-42"));
+	printf("input: --42 expected: 0 => %d\n", ft_atoi("--42"));	
+	printf("input: 2147483647 expected: 2147483647 => %d\n", ft_atoi("2147483647"));
+	printf("input: -2147483648 expected: -2147483648 => %d\n", ft_atoi("-2147483648"));
 	return (0);
 }
 
