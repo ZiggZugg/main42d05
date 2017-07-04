@@ -1,7 +1,8 @@
 #include <unistd.h>
 #include <stdio.h>
 #include <stdlib.h>
-
+#include <string.h>
+#include <limits.h>
 void	ft_putstr(char *str);
 void	ft_putnbr(int nb);
 int		ft_atoi(char *str);
@@ -33,7 +34,10 @@ int		ft_putchar(char c)
 	return (0);
 }
 
-
+void 	dashes(void)
+{
+	printf("\n---------------------\n");
+}
 void	testn(int i, char c)
 {
 	char *str;
@@ -149,7 +153,7 @@ int		main(void)
 	ft_putnbr(-2147483648);
 	ft_putstr("\n");
 
-	testn(1, 'c');
+	testn(2, 'c');
 	printf("input: 333 expected 333 => %d\n",ft_atoi("333"));
 	printf("input: 123456789 expected 123456789 => %d\n",ft_atoi("123456789"));
 	printf("input: 42 expected: 42 => %d\n",ft_atoi("42"));
@@ -164,6 +168,43 @@ int		main(void)
 	printf("input: --42 expected: 0 => %d\n", ft_atoi("--42"));	
 	printf("input: 2147483647 expected: 2147483647 => %d\n", ft_atoi("2147483647"));
 	printf("input: -2147483648 expected: -2147483648 => %d\n", ft_atoi("-2147483648"));
+	printf("input:'    +12  ' expected: 12 => %d\n", ft_atoi("     +12 "));
+	testn(3, 'd');
+	
+	char new[100];
+	ft_putstr("This test will copy the right parameter \ninto the left variable and null all other\n characters.");
+	dashes();
+	ft_putstr(ft_strcpy(new, "This same string variable"));
+	ft_putstr("\n");
+	ft_putstr(ft_strcpy(new, "is being passed down"));
+	ft_putstr("\n");
+	ft_putstr(ft_strcpy(new, "from ft_strcpy to"));	
+	ft_putstr("\n");
+	ft_putstr(ft_strcpy(new, "ft_strcpy ^_^"));
+	ft_putstr("\n");
+	ft_putstr(ft_strcpy(new, "isn't that weird"));
+	ft_putstr("\n");
+	ft_putstr(ft_strcpy(new, "????????????"));
+	ft_putstr("\n");
+
+	testn(4, 'e');
+
+	ft_putstr("This test will only copy up to the nth \nnumber specified in the paramenter it won't\nnecessary null charactesr after.");
+	dashes();
+	ft_putstr("\nThis is initial string: \n");
+	ft_putstr(new);
+	ft_putstr("\n");
+	ft_putstr(ft_strncpy(new, "This is it", 7));
+	ft_putstr("\n");
+	ft_putstr(ft_strncpy(new, "I'm not exactly sure", 6));
+	ft_putstr("\n");
+	ft_putstr(ft_strncpy(new, "if this is going to work", 5));
+	ft_putstr("\n");
+	ft_putstr(ft_strncpy(new, "but here it goes", 1));
+	ft_putstr("\n");
+	
+	testn(5, 'f');
+	
 	return (0);
 }
 
