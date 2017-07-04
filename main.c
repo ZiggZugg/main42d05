@@ -169,6 +169,7 @@ int		main(void)
 	printf("input: 2147483647 expected: 2147483647 => %d\n", ft_atoi("2147483647"));
 	printf("input: -2147483648 expected: -2147483648 => %d\n", ft_atoi("-2147483648"));
 	printf("input:'    +12  ' expected: 12 => %d\n", ft_atoi("     +12 "));
+
 	testn(3, 'd');
 	
 	char new[100];
@@ -219,7 +220,44 @@ int		main(void)
 
     
 	testn(5, 'f');
-	
+
+	char *big;
+	char *little;
+
+	big = "This is definitely not a little string";
+	little = "";
+	ft_putstr("This function will return the first instarnce where little\nstring is found in big string\n");
+    dashes();
+	printf("This is the big string: => %s\n", big);
+	printf("This is the litte string: (yes it's empty) => %s\n", little);
+	ft_putstr(ft_strstr(big, little));
+    ft_putstr("\n\n");
+    
+    big = "Foo Bar Baz";
+    little = "Bar";
+    printf("This is the big string: => %s\n", big);
+    printf("This is the litte string: => %s\n", little);
+    ft_putstr(ft_strstr(big, little));
+    ft_putstr("\n\n");
+    
+    big = "His name is Leopoldo";
+    little = "what is his name Leopoldo";
+    printf("This is the big string: => %s\n", big);
+    printf("This is the litte string: => %s\n", little);
+    printf("%s\n", ft_strstr(big, little));
+    ft_putstr("\n\n");
+    
+    testn(6, 'g');
+    printf("%d\n",ft_strcmp("abcd", "Abcd"));
+    printf("%d\n",ft_strcmp("abcefg", "abcd"));
+    printf("%d\n",ft_strcmp("bcd", "abcdd"));
+    printf("%d\n\n",ft_strcmp("Leo", "leon"));
+    printf("Below uses the library\n");
+    printf("%d\n",strcmp("abcd", "Abcd"));
+    printf("%d\n",strcmp("abcefg", "abcd"));
+    printf("%d\n",strcmp("bcd", "abcdd"));
+    printf("%d\n",strcmp("Leo", "leon"));
+
 	return (0);
 }
 
