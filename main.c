@@ -189,20 +189,35 @@ int		main(void)
 
 	testn(4, 'e');
 
+	char new1[100];
 	ft_putstr("This test will only copy up to the nth \nnumber specified in the paramenter it won't\nnecessary null charactesr after.");
 	dashes();
 	ft_putstr("\nThis is initial string: \n");
-	ft_putstr(new);
+	ft_putstr(new1);
 	ft_putstr("\n");
-	ft_putstr(ft_strncpy(new, "This is it", 7));
+	ft_putstr(ft_strncpy(new1, "This is it", 7));
 	ft_putstr("\n");
-	ft_putstr(ft_strncpy(new, "I'm not exactly sure", 6));
+	ft_putstr(ft_strncpy(new1, "I'm not exactly sure", 6));
 	ft_putstr("\n");
-	ft_putstr(ft_strncpy(new, "if this is going to work", 5));
+	ft_putstr(ft_strncpy(new1, "if this is going to work", 5));
 	ft_putstr("\n");
-	ft_putstr(ft_strncpy(new, "but here it goes", 1));
+	ft_putstr(ft_strncpy(new1, "but here it goes", 1));
 	ft_putstr("\n");
 	
+    dashes();
+    ft_putstr("\nThis is initial string: \n");
+    ft_putstr(new);
+    ft_putstr("\n");
+    ft_putstr(ft_strncpy(new, "This is it", 7));
+    ft_putstr("\n");
+    ft_putstr(ft_strncpy(new, "I'm not exactly sure", 6));
+    ft_putstr("\n");
+    ft_putstr(ft_strncpy(new, "if this is going to work", 5));
+    ft_putstr("\n");
+    ft_putstr(ft_strncpy(new, "but here it goes", 1));
+    ft_putstr("\n");
+
+    
 	testn(5, 'f');
 	
 	return (0);
