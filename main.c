@@ -362,8 +362,15 @@ int		main(void)
     printf("input: ' ' : 1 => %d\n", ft_str_is_printable(""));
     printf("input: 'THER\x7FzININPAIN': 1 => %d\n", ft_str_is_printable("THER\x7FzININPAIN"));
 
+    testn(16, 'q');
+    char part1[1000] = "The fox";
 
-
-	return (0);
+    
+    printf("part1 : %s\n",part1);
+    printf("The fox jumped over the rainbow => %s\n",ft_strcat(part1, " jumped over the rainbow"));
+    printf("The fox jumped over the rainbow again=> %s\n",ft_strcat(part1, " again"));
+    printf("The fox jumped over the rainbow again and again=> %s\n",ft_strcat(part1, " and again."));
+    
+    return (0);
 }
 
