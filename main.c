@@ -315,6 +315,20 @@ int		main(void)
     printf("tHis Is-A? test! = > %s\n", ft_strcapitalize(cap1));
     printf("this string has to be returned with capitalized words = > %s\n", ft_strcapitalize(cap2));
     printf("salut, coment tu vas ? 42mots quarante-deux; cinquante+et+un = > %s\n", ft_strcapitalize(cap3));
+    
+    testn(11, 'l');
+    
+    printf("input: What expected: 1 => %d\n", ft_str_is_alpha("What"));
+    printf("input: This is a string expected: 0 => %d\n", ft_str_is_alpha("This is a string"));
+    printf("input: FORTYTWO! expected: 0 => %d\n", ft_str_is_alpha("FORTYTWO!"));
+    printf("input: '' expected: 1 => %d\n", ft_str_is_alpha(""));
+    printf("input: 'ABCcdasdfdlrounnn1' expected: 0 => %d\n", ft_str_is_alpha("ABCcdasdfdlrounnn1"));
+    printf("input: 'ABCcdasdfdlrounnn' expected: 1 => %d\n", ft_str_is_alpha("ABCcdasdfdlrounnn"));
+    printf("input: '   ABCcdasdfdlrounnn' expected: 0 => %d\n", ft_str_is_alpha("   ABCcdasdfdlrounnn"));
+
+
+    
+    
 
 	return (0);
 }
