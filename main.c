@@ -326,7 +326,14 @@ int		main(void)
     printf("input: 'ABCcdasdfdlrounnn' expected: 1 => %d\n", ft_str_is_alpha("ABCcdasdfdlrounnn"));
     printf("input: '   ABCcdasdfdlrounnn' expected: 0 => %d\n", ft_str_is_alpha("   ABCcdasdfdlrounnn"));
 
-
+    testn(12, 'm');
+    
+    printf("input: '1234567890': 1 => %d\n", ft_str_is_numeric("1234567890"));
+    printf("input: '    567890': 0 => %d\n", ft_str_is_numeric("    567890"));
+    printf("input: '1234abcdef': 0 => %d\n", ft_str_is_numeric("1234abcdef"));
+    printf("input: '42424242 4': 0 => %d\n", ft_str_is_numeric("42424242 4"));
+    printf("input: ' ' : 1 => %d\n", ft_str_is_numeric(""));
+    printf("input: 'sans scr1p': 0 => %d\n", ft_str_is_numeric("sans scr1p"));
     
     
 
