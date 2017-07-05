@@ -343,6 +343,16 @@ int		main(void)
     printf("input: '42424242 4': 0 => %d\n", ft_str_is_lowercase("42424242 4"));
     printf("input: ' ' : 1 => %d\n", ft_str_is_lowercase(""));
     printf("input: 'ABCDEFGHIJ': 0 => %d\n", ft_str_is_lowercase("ABCDEFGHIJ"));
+    
+    testn(14, 'o');
+    
+    printf("input: '1234567890': 0 => %d\n", ft_str_is_uppercase("1234567890"));
+    printf("input: '    567890': 0 => %d\n", ft_str_is_uppercase("    567890"));
+    printf("input: 'abcdefghij': 0 => %d\n", ft_str_is_uppercase("abcdefghij"));
+    printf("input: '42424242 4': 0 => %d\n", ft_str_is_uppercase("42424242 4"));
+    printf("input: ' ' : 1 => %d\n", ft_str_is_uppercase(""));
+    printf("input: 'ABCDEFGHIJ': 1 => %d\n", ft_str_is_uppercase("ABCDEFGHIJ"));
+
 
 	return (0);
 }
