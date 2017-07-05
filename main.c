@@ -335,7 +335,14 @@ int		main(void)
     printf("input: ' ' : 1 => %d\n", ft_str_is_numeric(""));
     printf("input: 'sans scr1p': 0 => %d\n", ft_str_is_numeric("sans scr1p"));
     
+    testn(13, 'n');
     
+    printf("input: '1234567890': 0 => %d\n", ft_str_is_lowercase("1234567890"));
+    printf("input: '    567890': 0 => %d\n", ft_str_is_lowercase("    567890"));
+    printf("input: 'abcdefghij': 1 => %d\n", ft_str_is_lowercase("abcdefghij"));
+    printf("input: '42424242 4': 0 => %d\n", ft_str_is_lowercase("42424242 4"));
+    printf("input: ' ' : 1 => %d\n", ft_str_is_lowercase(""));
+    printf("input: 'ABCDEFGHIJ': 0 => %d\n", ft_str_is_lowercase("ABCDEFGHIJ"));
 
 	return (0);
 }
