@@ -371,6 +371,17 @@ int		main(void)
     printf("The fox jumped over the rainbow again=> %s\n",ft_strcat(part1, " again"));
     printf("The fox jumped over the rainbow again and again=> %s\n",ft_strcat(part1, " and again."));
     
+    testn(17, 'r');
+    char part2[1000] = "The fox";
+    
+    printf("part1 : %s\n",part2);
+    printf("The fox jumped => %s\n",ft_strncat(part2, " jumped over the rainbow", 7));
+    printf("The fox jumped aga => %s\n",ft_strncat(part2, " again", 4));
+    printf("The fox jumped aga and => %s\n",ft_strncat(part2, " and again.", 4));
+
+    
+    
+    
     return (0);
 }
 
