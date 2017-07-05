@@ -149,7 +149,7 @@ int		main(void)
 	ft_putnbr(-2147483648);
 	ft_putstr("\n");
 
-	testn(1, 'c');
+	testn(2, 'c');
 	printf("input: 333 expected 333 => %d\n",ft_atoi("333"));
 	printf("input: 123456789 expected 123456789 => %d\n",ft_atoi("123456789"));
 	printf("input: 42 expected: 42 => %d\n",ft_atoi("42"));
