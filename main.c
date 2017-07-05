@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <limits.h>
+#include <ctype.h>
 void	ft_putstr(char *str);
 void	ft_putnbr(int nb);
 int		ft_atoi(char *str);
@@ -127,7 +128,8 @@ int		main(void)
 {
 	testn(0, 'a');
 	ft_putstr("This is a test of putstr\n");
-
+	ft_putstr("This\nis\na\ntest\n");
+    
 	testn(1, 'b');
 	ft_putstr("0 => ");
    	ft_putnbr(0);
@@ -151,6 +153,8 @@ int		main(void)
 	ft_putnbr(2147483647);
 	ft_putstr("\n-2147483648 => ");
 	ft_putnbr(-2147483648);
+	ft_putstr("\n0123\n");
+	ft_putnbr(0123);
 	ft_putstr("\n");
 
 	testn(2, 'c');
@@ -162,14 +166,15 @@ int		main(void)
 	printf("input: -42 expected: -42 => %d\n",ft_atoi("-42"));
 	printf("input: \\f\\r\\t\\v\\' \'42 expected: 42 => %d\n",ft_atoi("\f\r\t\v 42"));
 	printf("input: ?!@#$*() 3245 expected: 0 => %d\n",ft_atoi("?!@#$*() 3245"));
-	printf("input: 42- 42 4242 expected: 42 => %d\n", ft_atoi("42- 42 4242"));
+	printf("input: 42abc- 42 4242 expected: 42 => %d\n", ft_atoi("42abc- 42 4242"));
 	printf("input: -+42 expected: 0 => %d\n", ft_atoi("-+42"));
 	printf("input: +-42 expected: 0 => %d\n", ft_atoi("+-42"));
 	printf("input: --42 expected: 0 => %d\n", ft_atoi("--42"));	
 	printf("input: 2147483647 expected: 2147483647 => %d\n", ft_atoi("2147483647"));
 	printf("input: -2147483648 expected: -2147483648 => %d\n", ft_atoi("-2147483648"));
 	printf("input:'    +12  ' expected: 12 => %d\n", ft_atoi("     +12 "));
-
+    printf("input:'3147483649' expected: ?? => %d\n", atoi("3147483649"));
+    printf("input:'3147483649' expected: ?? => %d\n", ft_atoi("3147483649"));
 	testn(3, 'd');
 	
 	char new[100];
@@ -252,11 +257,52 @@ int		main(void)
     printf("%d\n",ft_strcmp("abcefg", "abcd"));
     printf("%d\n",ft_strcmp("bcd", "abcdd"));
     printf("%d\n\n",ft_strcmp("Leo", "leon"));
-    printf("Below uses the library\n");
+    printf("Below uses the library\nIf output is the same, then you are correct ^_^");
+    dashes();
     printf("%d\n",strcmp("abcd", "Abcd"));
     printf("%d\n",strcmp("abcefg", "abcd"));
     printf("%d\n",strcmp("bcd", "abcdd"));
     printf("%d\n",strcmp("Leo", "leon"));
+    
+    testn(7, 'h');
+    printf("%d\n",ft_strncmp("abcd", "abck", 4));
+    printf("%d\n",ft_strncmp("abcefg", "abcd", 2));
+    printf("%d\n",ft_strncmp("bcd", "abcdd", 1));
+    printf("%d\n",ft_strncmp("Leo", "leon", 0));
+    printf("%d\n",ft_strncmp("qwerty", "qwerty type", 7));
+    printf("%d\n",ft_strncmp("qwerty", "qwerty type", 5));
+    printf("%d\n",ft_strncmp("qwerty", "qwerty type", 20));
+    printf("Below uses the library\nIf output is the same, then you are correct ^_^");
+    dashes();
+    printf("%d\n",strncmp("abcd", "abck", 4));
+    printf("%d\n",strncmp("abcefg", "abcd", 2));
+    printf("%d\n",strncmp("bcd", "abcdd",1));
+    printf("%d\n",strncmp("Leo", "leon", 0));
+    printf("%d\n",strncmp("qwerty", "qwerty type", 7));
+    printf("%d\n",strncmp("qwerty", "qwertygit  type", 5));
+    printf("%d\n",strncmp("qwerty", "qwerty type", 20));
+    
+    testn(8, 'i');
+    char low[] = "what";
+    char low1[] = "this string has to be returned with uppercase letters";
+    char low2[] ="aBcDeFgHiJkLmNoPqRsTuVwXyZ";
+    char low3[] = "hello world!?.,';][-09876545321!@@#$$";
+    
+    printf("what => %s\n", ft_strupcase(low));
+    printf("this string has to be returned with uppercase letters => %s\n",ft_strupcase(low1));
+    printf("aBcDeFgHiJkLmNoPqRsTuVwXyZ => %s\n", ft_strupcase(low2));
+    printf("hello world!?.,';][-09876545321!@@#$$ => %s\n", ft_strupcase(low3));
+
+    testn(9, 'j');
+    char upp[] = "WHAT";
+    char upp1[] = "THIS STRING HAS TO BE RETURNED WITH LOWERCASE LETTERS";
+    char upp2[] ="aBcDeFgHiJkLmNoPqRsTuVwXyZ";
+    char upp3[] = "HELLO wORLD!?.,';][-09876545321!@@#$$";
+    
+    printf("WHAT => %s\n", ft_strlowcase(upp));
+    printf("THIS STRING HAS TO BE RETURNED WITH LOWERCASE LETTERS => %s\n",ft_strlowcase(upp1));
+    printf("aBcDeFgHiJkLmNoPqRsTuVwXyZ => %s\n", ft_strlowcase(upp2));
+    printf("HELLO wORLD!?.,';][-09876545321!@@#$$ => %s\n", ft_strlowcase(upp3));
 
 	return (0);
 }
