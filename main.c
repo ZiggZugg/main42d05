@@ -303,6 +303,18 @@ int		main(void)
     printf("THIS STRING HAS TO BE RETURNED WITH LOWERCASE LETTERS => %s\n",ft_strlowcase(upp1));
     printf("aBcDeFgHiJkLmNoPqRsTuVwXyZ => %s\n", ft_strlowcase(upp2));
     printf("HELLO wORLD!?.,';][-09876545321!@@#$$ => %s\n", ft_strlowcase(upp3));
+    
+    testn(10, 'k');
+    
+    char cap[] ="this is-a test!";
+    char cap1[] ="tHis Is-A? test!";
+    char cap2[] = "this string has to be returned with capitalized words";
+    char cap3[] ="salut, coment tu vas ? 42mots quarante-deux; cinquante+et+un";
+    
+    printf("this is-a test! = > %s\n", ft_strcapitalize(cap));
+    printf("tHis Is-A? test! = > %s\n", ft_strcapitalize(cap1));
+    printf("this string has to be returned with capitalized words = > %s\n", ft_strcapitalize(cap2));
+    printf("salut, coment tu vas ? 42mots quarante-deux; cinquante+et+un = > %s\n", ft_strcapitalize(cap3));
 
 	return (0);
 }
