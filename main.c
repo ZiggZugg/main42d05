@@ -352,6 +352,16 @@ int		main(void)
     printf("input: '42424242 4': 0 => %d\n", ft_str_is_uppercase("42424242 4"));
     printf("input: ' ' : 1 => %d\n", ft_str_is_uppercase(""));
     printf("input: 'ABCDEFGHIJ': 1 => %d\n", ft_str_is_uppercase("ABCDEFGHIJ"));
+    
+    testn(15, 'p');
+    
+    printf("input: 'short long \\r\\f\\t\\v' '': 0 => %d\n", ft_str_is_printable("short long \r\f\v\t "));
+    printf("input: '123456789a': 1 => %d\n", ft_str_is_printable("123456789a"));
+    printf("input: '!@#$&*()_+': 1 => %d\n", ft_str_is_printable("!@#$&*()_+"));
+    printf("input: 'shortLONG\nstring: 0 => %d\n", ft_str_is_printable("shortLONG\nstring"));
+    printf("input: ' ' : 1 => %d\n", ft_str_is_printable(""));
+    printf("input: 'THER\x7FzININPAIN': 1 => %d\n", ft_str_is_printable("THER\x7FzININPAIN"));
+
 
 
 	return (0);
