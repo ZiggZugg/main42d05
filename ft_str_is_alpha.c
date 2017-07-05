@@ -1,25 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_str_is_alpha.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lhernand <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/07/04 01:58:38 by lhernand          #+#    #+#             */
-/*   Updated: 2017/07/04 02:13:50 by lhernand         ###   ########.fr       */
+/*   Created: 2017/07/04 18:41:14 by lhernand          #+#    #+#             */
+/*   Updated: 2017/07/04 19:10:16 by lhernand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_strcmp(char *s1, char *s2)
+int			ft_str_is_alpha(char *str)
 {
-	int i;
+	int		i;
 
 	i = 0;
-	while ((s1[i] != '\0') && (s2[i] != '\0'))
+	if (str[i] == '\0')
+		return (1);
+	while (str[i] != '\0')
 	{
-		if (s1[i] != s2[i])
-			return (s1[i] - s2[i]);
-		i++;
+		if (((str[i] >= 'a') && (str[i] <= 'z'))
+				|| ((str[i] >= 'A') && (str[i] <= 'Z')))
+			i++;
+		else
+			return (0);
 	}
-	return (s1[i] - s2[i]);
+	return (1);
 }

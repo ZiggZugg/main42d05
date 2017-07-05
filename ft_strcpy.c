@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_strcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lhernand <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/07/04 01:58:38 by lhernand          #+#    #+#             */
-/*   Updated: 2017/07/04 02:13:50 by lhernand         ###   ########.fr       */
+/*   Created: 2017/07/03 14:07:55 by lhernand          #+#    #+#             */
+/*   Updated: 2017/07/03 19:14:26 by lhernand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_strcmp(char *s1, char *s2)
+char		*ft_strcpy(char *dest, char *src)
 {
-	int i;
+	char *ptr;
 
-	i = 0;
-	while ((s1[i] != '\0') && (s2[i] != '\0'))
-	{
-		if (s1[i] != s2[i])
-			return (s1[i] - s2[i]);
-		i++;
-	}
-	return (s1[i] - s2[i]);
+	ptr = dest;
+	if (!dest && !src)
+		return (0);
+	while (*src)
+		*dest++ = *src++;
+	*dest = '\0';
+	dest = ptr;
+	return (dest);
 }
