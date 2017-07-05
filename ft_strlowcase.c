@@ -1,25 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_strlowcase.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lhernand <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/07/04 01:58:38 by lhernand          #+#    #+#             */
-/*   Updated: 2017/07/04 02:13:50 by lhernand         ###   ########.fr       */
+/*   Created: 2017/07/04 17:05:06 by lhernand          #+#    #+#             */
+/*   Updated: 2017/07/04 17:08:32 by lhernand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_strcmp(char *s1, char *s2)
+char	*ft_strlowcase(char *str)
 {
-	int i;
+	int		i;
+	char	*ptr;
 
+	ptr = str;
 	i = 0;
-	while ((s1[i] != '\0') && (s2[i] != '\0'))
+	while (str[i] != '\0')
 	{
-		if (s1[i] != s2[i])
-			return (s1[i] - s2[i]);
+		if ((str[i] >= 'A') && (str[i] <= 'Z'))
+			str[i] += 32;
 		i++;
 	}
-	return (s1[i] - s2[i]);
+	str = ptr;
+	return (str);
 }

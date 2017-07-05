@@ -1,25 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_strcapitalize.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lhernand <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/07/04 01:58:38 by lhernand          #+#    #+#             */
-/*   Updated: 2017/07/04 02:13:50 by lhernand         ###   ########.fr       */
+/*   Created: 2017/07/04 17:13:28 by lhernand          #+#    #+#             */
+/*   Updated: 2017/07/04 18:30:09 by lhernand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_strcmp(char *s1, char *s2)
+char			*ft_strcapitalize(char *str)
 {
-	int i;
+	int			i;
+	char		*ptr;
 
 	i = 0;
-	while ((s1[i] != '\0') && (s2[i] != '\0'))
+	ptr = str;
+	if ((str[i] >= 'a') && (str[i] <= 'z'))
+		str[i] -= 32;
+	while (str[i] != '\0')
 	{
-		if (s1[i] != s2[i])
-			return (s1[i] - s2[i]);
+		while (str[i] == ' ' || str[i] == '-' || str[i] == '+' || str[i] == ','
+				|| str[i] == ':' || str[i] == '?' || str[i] == '.'
+				|| str[i] == '!')
+		{
+			i++;
+			if ((str[i] >= 'a') && (str[i] <= 'z'))
+				str[i] -= 32;
+		}
 		i++;
 	}
-	return (s1[i] - s2[i]);
+	str = ptr;
+	return (str);
 }
